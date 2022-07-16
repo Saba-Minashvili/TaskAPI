@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Contracts
+﻿namespace Contracts
 {
     public class AddressingDto
     {
@@ -11,33 +9,21 @@ namespace Contracts
         public int UnityId { get; set; }
         public int VillageId { get; set; }
 
-        [Required]
         public string? District { get; set; }
-        [Required]
         public string? Mr { get; set; }
-        [Required]
         public string? Quarter { get; set; }
-        [Required]
         public string? Street { get; set; }
-        [Required]
         public string? Building { get; set; }
-        [Required]
         public string? Corpus { get; set; }
-        [Required]
         public int FlatNum { get; set; }
-        [Required]
 
         public int BuildingType { get; set; }
 
-        [Required]
         public string? InstitutionName { get; set; }
-        [Required]
         public int InstitutionSpaceNum { get; set; }
 
-        [Required]
         public int LivingStatus { get; set; }
 
-        [Required]
         public List<HouseHoldDto>? HouseHold { get; set; }
     }
 }

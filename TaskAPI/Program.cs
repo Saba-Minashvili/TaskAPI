@@ -1,6 +1,8 @@
 using Domain.Repositories;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Middleware.Validators;
 using Persistence;
 using Persistence.Mapper;
 using Persistence.Repositories;
@@ -18,7 +20,9 @@ builder.Services.AddScoped(typeof(IServiceManager), typeof(ServiceManager));
 builder.Services.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork));
 builder.Services.AddAutoMapper(typeof(ObjectMapper).Assembly);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<AddressingDtoValidator>());
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
