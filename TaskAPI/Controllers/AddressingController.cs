@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Microsoft.AspNetCore.Mvc;
+using Middleware.Filters;
 using Services.Abstractions;
 
 namespace TaskAPI.Controllers
