@@ -31,14 +31,19 @@ namespace Middleware.Validators
                 .NotNull()
                 .NotEmpty()
                 .Matches("^[a-zA-Z0-9 ]*$");
-            RuleFor(x => x.Building)
-                .NotNull()
-                .NotEmpty()
-                .Matches("^[a-zA-Z0-9 ]*$");
             RuleFor(x => x.InstitutionName)
                 .NotNull()
                 .NotEmpty()
                 .Matches("^[a-zA-Z0-9 ]*$");
+            RuleFor(x => x.FlatNum)
+                .NotEqual(0);
+            RuleFor(x => x.InstitutionSpaceNum)
+                .NotEqual(0);
+            RuleFor(x => x.LivingStatus)
+                .NotEqual(0);
+            RuleFor(x => x.HouseHold)
+                .NotNull()
+                .NotEmpty();
         }
     }
 }

@@ -68,7 +68,7 @@ namespace TaskAPI.Controllers
         }
 
         [HttpDelete("{addressingId}")]
-        public async Task<IActionResult> DeleteAddressing([FromBody] int addressingId, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> DeleteAddressing(int addressingId, CancellationToken cancellationToken = default)
         {
             try
             {

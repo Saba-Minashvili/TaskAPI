@@ -60,7 +60,7 @@ namespace Services
 
             var addressing = await _unitOfWork.AddressingRepository.GetByIdAsync(addressingId, cancellationToken);
 
-            _unitOfWork.AddressingRepository.CreateAsync(addressing);
+            _unitOfWork.AddressingRepository.DeleteAsync(addressing);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
